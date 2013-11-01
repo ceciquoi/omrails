@@ -1,12 +1,14 @@
-<div class="center hero-unit">
-	<h1>Ptica moja</h1>
-	<p> You are the sunshine of my life </p>
-	<p></p>
-	<p></p>
-	<p><%=link_to "Click to Kiss!", "#", class: "btn btn-large btn-primary"%></p>
-</div>
+<% if user_signed_in? %>
+	<h1>You are logged in!</h1>
+<% else %>
+	<div class="center hero-unit">
+		<h1>Ptica moja</h1>
+		<p> You are the sunshine of my life </p>
+		<p><%=link_to "Click to Kiss!", new_user_registration_path, class: "btn btn-large btn-primary"%></p>
+	</div>
 
-<div align=center>
-	<p><iframe width="420" height="315" src="//www.youtube.com/embed/yhhDAf_lKrk"></iframe></p>
-	<p> Let me count the ways I love you!</p>	
-</div>
+	<div align=center>
+		<p><iframe width="420" height="315" src="//www.youtube.com/embed/yhhDAf_lKrk"></iframe></p>
+		<p> Let me count the ways I love you!</p>	
+	</div>
+<% end %>
